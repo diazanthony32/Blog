@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            echo "Web Server is Running Locally";
+            echo "Web Server is Running Locally.";
         ?>
     </body>
 </html>
