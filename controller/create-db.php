@@ -1,10 +1,10 @@
 <?php
 
 //include the info in the file
-require_once(__DIR__ ."/../model/database.php");
+require_once(__DIR__ . "/../model/database.php");
 
 //enable us to access info on the server
-$connection = new mysqli($host, $user, $password);
+$connection = new mysqli($host, $username, $password);
 
 //checks if the connection is unsuccesful or not
 if($connection->connect_error){
@@ -14,12 +14,15 @@ if($connection->connect_error){
     
 }
 
- else {
-     
-    //Connection Successful
-    echo 'Success: ' . $connection->host_info;
+//checks if the database already exits in the program
+$exists = $connection->select_db($database);
+
+//checks if the data base exists or not
+if(!$exists){
     
- }
+    echo 'Database does not exists';
+
+}
  
  //ends the connectiion to the server
  $connection->close();
