@@ -20,9 +20,36 @@ $exists = $connection->select_db($database);
 //checks if the data base exists or not
 if(!$exists){
     
-    echo 'Database does not exists';
+    //creates a database with the chosen name
+    $query = $connection->query("CREATE DATABASE $database");
 
+    //checks if the data base was able to be successfully executed
+    if($query){
+        
+        echo "Successfully created database: " . $database;
+        
+    }
+    
 }
- 
- //ends the connectiion to the server
+
+ else {
+
+    echo 'Database already exists: '. $database;
+     
+}
+
+//created a query that will create a table in order to put information
+$query = $connection->query("CREATE TABLE posts ("
+        . "id int(11) NOT NULL AUTO_INCREMENT,"
+        . "title varchar(255) NOT NULL,"
+        . "post text NOT NULL,"
+        . "PRIMARY KEY(id))");
+
+if($query){
+    
+    echo "Successfully created table: posts";
+    
+}
+
+        //ends the connectiion to the server
  $connection->close();
