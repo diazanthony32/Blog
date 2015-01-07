@@ -23,7 +23,7 @@ if(!$exists){
     //creates a database with the chosen name
     $query = $connection->query("CREATE DATABASE $database");
 
-    //checks if the data base was able to be successfully executed
+    //checks if the database was able to be created successfully
     if($query){
         
         echo "<p>Successfully created database: " . $database. "</p>";
@@ -32,6 +32,7 @@ if(!$exists){
     
 }
 
+//checks if the data base already exists
  else {
 
     echo '<p>Database already exists: '. $database . "</p>";
@@ -45,16 +46,19 @@ $query = $connection->query("CREATE TABLE posts ("
         . "post text NOT NULL,"
         . "PRIMARY KEY(id))");
 
+//checks if table is created properly
 if($query){
     
     echo "<p>Successfully created table: posts</p>";
     
 }
+
+//checks if the table was already there or created improperly
  else {
      
     echo "<p>$connection->error</p>";
      
 }
 
-        //ends the connectiion to the server
+//ends the connectiion to the server
  $connection->close();
