@@ -14,6 +14,23 @@ class Database{
         $this->password =$password;
         $this->username = $username;
         $this->database = $database;
+    
     }
     
+    public function openConnection(){
+        
+        
+    }
+    
+    public function closeConnection(){
+        
+        
+    }
+
+    public function query(){
+        
+        
+        
+    }
+
 }
