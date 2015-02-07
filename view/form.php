@@ -1,6 +1,12 @@
+<?php
+
+require_once(__DIR__."/../model/config.php");
+
+?>
+
 <h1>Create Blog Post</h1>
 
-<form>
+<form method="post" action="<?php $path . "controller/create-post.php"?>">
     
     <div>
        
