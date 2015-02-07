@@ -1,12 +1,13 @@
 <?php
 
-require_once(__DIR__."/../model/config.php");
+//include the info in the file
+require_once(__DIR__ . "/../model/config.php");
 
 ?>
 
 <h1>Create Blog Post</h1>
 
-<form method="post" action="<?php $path . "controller/create-post.php"?>">
+<form method="post" action="<?php $path . "controller/create-post.php"; ?>">
     
     <div>
        
@@ -26,7 +27,7 @@ require_once(__DIR__."/../model/config.php");
     
     <div>
         
-        <button type="submit">Submit</button>
+        <button type= "submit">Submit</button>
         
     </div>
     
