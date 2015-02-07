@@ -13,3 +13,6 @@ $password = "root";
 
 //database name
 $database = "blog_db";
+
+
+$connection = new Database($host, $username, $password, $database);

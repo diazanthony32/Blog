@@ -3,9 +3,6 @@
 //include the info in the file
 require_once(__DIR__ . "/../model/config.php");
 
-//enable us to access info on the server
-$connection = new mysqli($host, $username, $password);
-
 //checks if the connection is unsuccesful or not
 if($connection->connect_error){
     
