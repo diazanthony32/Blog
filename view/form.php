@@ -20,7 +20,7 @@
     
     <div>
         
-        <button type="submit">Button</button>
+        <button type="submit">Submit</button>
         
     </div>
     
