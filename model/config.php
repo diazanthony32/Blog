@@ -1,5 +1,8 @@
 <?php
 
+//include the info in the file
+require_once(__DIR__ . "/Database.php");
+
 $path = "/diaza-blog/";
 
 

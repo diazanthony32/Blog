@@ -3,39 +3,6 @@
 //include the info in the file
 require_once(__DIR__ . "/../model/config.php");
 
-//checks if the connection is unsuccesful or not
-if($connection->connect_error){
-    
-    //Connection has failed and shos the problem
-    die("<p>Error: " . $connection->connect_error). "</p>";
-    
-}
-
-//checks if the database already exits in the program
-$exists = $connection->select_db($database);
-
-//checks if the data base exists or not
-if(!$exists){
-    
-    //creates a database with the chosen name
-    $query = $connection->query("CREATE DATABASE $database");
-
-    //checks if the database was able to be created successfully
-    if($query){
-        
-        echo "<p>Successfully created database: " . $database. "</p>";
-        
-    }
-    
-}
-
-//checks if the data base already exists
- else {
-
-    echo '<p>Database already exists: '. $database . "</p>";
-     
-}
-
 //created a query that will create a table in order to put information
 $query = $connection->query("CREATE TABLE posts ("
         . "id int(11) NOT NULL AUTO_INCREMENT,"
@@ -57,5 +24,3 @@ if($query){
      
 }
 
-//ends the connectiion to the server
- $connection->close();
